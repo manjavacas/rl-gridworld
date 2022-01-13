@@ -4,25 +4,25 @@ import gridworld
 import numpy as np
 
 
-'''GridWorld values prediction by using Monte Carlo'''
+'''Gridworld state values prediction with Monte Carlo'''
 
 
 def main():
 
-    cells = np.array([['S', 'W', '-', '-', '-', 'G'],
+    grid = np.array([['S', 'W', '-', '-', '-', 'G'],
                       ['-', 'W', 'W', '-', 'W', 'W'],
                       ['-', '-', '-', '-', 'W', '-'],
                       ['-', 'W', 'W', '-', '-', '-'],
                       ['-', '-', '-', '-', 'W', '-']])
 
-    env = gym.make('GridWorld-v0', states_matrix=cells)
+    env = gym.make('GridWorld-v0', states_matrix=grid)
 
-    values = np.zeros(cells.shape, dtype=float)
-    visits = np.zeros(cells.shape, dtype=float)
+    values = np.zeros(grid.shape, dtype=float)
+    visits = np.zeros(grid.shape, dtype=float)
 
     N_EPISODES = 10
 
-    # LEARNING VALUES BY MONTECARLO
+    # Learning values
     for i in range(N_EPISODES):
         env.reset()
         visited = []
@@ -42,12 +42,11 @@ def main():
 
         # Values update
         for state in visited:
-            visits[state[0]][state[1]] += 1
-            values[state[0]][state[1]] = round(values[state[0]][state[1]] +
-                                               (1/visits[state[0]][state[1]])*(R - values[state[0]][state[1]]), 3)
+            visits[state[0], state[1]] += 1
+            values[state[0], state[1]] = round(values[state[0], state[1]] +
+                                               (1/visits[state[0], state[1]])*(R - values[state[0], state[1]]), 3)
 
-    print('End! Final values:')
-    print(values)
+    print('End! Final values:\n' + str(values))
 
 
 if __name__ == '__main__':
