@@ -1,2 +1,5 @@
-# rl
-Reinforcement Learning implementations
+# RL
+
+Antonio Manjavacas
+
+Some reinforcement Learning implementations
