@@ -1,5 +1,5 @@
 # RL 🤖
 
-Antonio Manjavacas
+**Antonio Manjavacas**
 
 Some Reinforcement Learning implementations
