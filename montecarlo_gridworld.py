@@ -36,7 +36,7 @@ def main():
                 visited.append(obs)
 
             print(info)
-            env.render(mode='ansi', time_bt_frames=.001)
+            env.render(mode='human', time_bt_frames=.001)
             R += reward
         print('Total reward for the episode ' + str(i) + ': %.3f' % R)
 
