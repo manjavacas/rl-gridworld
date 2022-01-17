@@ -9,7 +9,7 @@ ALPHA = .8
 GAMMA = .95
 
 
-'''Gridworld solved with SARSA'''
+'''Gridworld solved with Q-learning'''
 
 
 def main():
@@ -42,7 +42,7 @@ def main():
             action1 = choose_action(states_dict[state1], env, q_values)
 
             update_values(states_dict[state0], action0,
-                          reward, states_dict[state1], action1, q_values)
+                          reward, states_dict[state1], q_values)
 
             state0 = state1
             action0 = action1
@@ -89,9 +89,9 @@ def choose_action(state, env, q_values, epsilon=EPSILON):
     return action
 
 
-def update_values(state0, action0, reward, state1, action1, q_values, alpha=ALPHA, gamma=GAMMA):
+def update_values(state0, action0, reward, state1, q_values, alpha=ALPHA, gamma=GAMMA):
     current = q_values[state0, action0]
-    target = reward + gamma * q_values[state1, action1]
+    target = reward + gamma * max(q_values[state1, :])
     q_values[state0, action0] = current + alpha * (target - current)
 
 
