@@ -2,4 +2,4 @@
 
 **Antonio Manjavacas**
 
-Some Reinforcement Learning implementations
+Some Reinforcement Learning implementations.
