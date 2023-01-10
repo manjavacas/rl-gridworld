@@ -1,1 +1,3 @@
-Value iteration tested in custom gridworld environment.
+## About
+
+Some classic reinforcement learning algorithms tested in a custom gridworld environment.
