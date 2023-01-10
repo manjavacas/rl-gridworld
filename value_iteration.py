@@ -1,12 +1,10 @@
-#!/usr/bin/env python3
-
-''' Deterministic MDP solved with value iteration algorithm '''
-
 import numpy as np
 import matplotlib.pyplot as plt
 
 WIDTH = 4
 HEIGHT = 4
+
+''' Deterministic MDP solved with value iteration algorithm '''
 
 
 class State:
