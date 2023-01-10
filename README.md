@@ -1,5 +1,1 @@
-# RL 🤖
-
-**Antonio Manjavacas**
-
-Some Reinforcement Learning implementations.
+Value iteration tested in custom gridworld environment.
