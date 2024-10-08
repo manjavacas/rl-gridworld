@@ -1,6 +1,6 @@
-## About
+## 🗒 About
 
-Some classic reinforcement learning algorithms tested in a custom gridworld environment.
+Some classic **reinforcement learning** algorithms tested in a custom Gridworld environment. Includes:
 
 * MonteCarlo
 * Q-learning
